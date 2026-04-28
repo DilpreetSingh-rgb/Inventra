@@ -1,0 +1,1 @@
+# Data ingestion is the process of collecting and importing data from various sources such as files, databases, or APIs into a system for further processing and analysis. It is the first step in a data pipeline.
