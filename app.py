@@ -4,6 +4,8 @@ from utils.user import add_user
 
 import pandas as pd
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
+
 
 
 from utils.inventry import (
@@ -174,7 +176,7 @@ page = st.sidebar.radio(
 if page == "📦 Inventory Management":
     
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+   now = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%A, %d %B %Y · %H:%M")
     st.markdown(
         f"""
         <div class="page-header">
