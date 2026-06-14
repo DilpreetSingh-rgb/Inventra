@@ -648,7 +648,7 @@ elif page == "📈 Sales Dashboard":
         )
     elif report == "Overview":
 
-        st.subheader("Overview")
+        st.subheader("📊 Overview")
         inventory = pd.DataFrame(
             get_inventory()
         )
