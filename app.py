@@ -333,7 +333,11 @@ if page == "📦 Inventory Management":
 elif page == "🧾 Billing":
     
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -552,6 +556,11 @@ elif page == "🧾 Billing":
 elif page == "📈 Sales Dashboard":
 
     # ── Header ──────────────────────────────────────────────────────────────
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -755,6 +764,11 @@ elif page == "📈 Sales Dashboard":
 elif page == "💡 Stock Recommendations":
 
     # ── Header ──────────────────────────────────────────────────────────────
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -779,6 +793,11 @@ elif page == "💡 Stock Recommendations":
 elif page == "🔮 Demand Forecasting":
 
     # ── Header ──────────────────────────────────────────────────────────────    
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -811,6 +830,11 @@ elif page == "🔮 Demand Forecasting":
 elif page == "🚚 Supplier Management":
     
     # ── Header ──────────────────────────────────────────────────────────────
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
