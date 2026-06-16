@@ -4,7 +4,7 @@ from utils.user import add_user
 
 import pandas as pd
 from datetime import datetime, timedelta
-
+from zoneinfo import ZoneInfo
 
 from utils.inventry import (
     add_product,
@@ -108,6 +108,24 @@ st.markdown("""
 
 </style>
 """, unsafe_allow_html=True)
+st.markdown("""
+<style>
+
+.stTextInput input {
+    color: black !important;
+}
+
+.stTextInput input::placeholder {
+    color: gray !important;
+    opacity: 1 !important;
+}
+
+label {
+    color: black !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # ==========================
 # SESSION STATE
@@ -174,7 +192,11 @@ page = st.sidebar.radio(
 if page == "📦 Inventory Management":
     
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )    
     st.markdown(
         f"""
         <div class="page-header">
@@ -327,7 +349,11 @@ if page == "📦 Inventory Management":
 elif page == "🧾 Billing":
     
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -546,7 +572,11 @@ elif page == "🧾 Billing":
 elif page == "📈 Sales Dashboard":
 
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -616,6 +646,7 @@ elif page == "📈 Sales Dashboard":
         )
     elif report == "Overview":
 
+        st.subheader("📊 Overview")
         inventory = pd.DataFrame(
             get_inventory()
         )
@@ -696,6 +727,7 @@ elif page == "📈 Sales Dashboard":
         st.subheader("📋 Sales List")
         
         products = view_sales()
+        products = products.iloc[::-1]
         st.dataframe(
             products,
             hide_index=True,
@@ -750,7 +782,11 @@ elif page == "📈 Sales Dashboard":
 elif page == "💡 Stock Recommendations":
 
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
@@ -775,10 +811,11 @@ elif page == "💡 Stock Recommendations":
 elif page == "🔮 Demand Forecasting":
 
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime(
-        "%A, %d %B %Y  ·  %H:%M"
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
     )
-
     st.markdown(
         f"""
         <div class="page-header">
@@ -811,7 +848,11 @@ elif page == "🔮 Demand Forecasting":
 elif page == "🚚 Supplier Management":
     
     # ── Header ──────────────────────────────────────────────────────────────
-    now = datetime.now().strftime("%A, %d %B %Y  ·  %H:%M")
+    now = datetime.now(
+        ZoneInfo("Asia/Kolkata")
+    ).strftime(
+        "%A, %d %B %Y · %H:%M"
+    )
     st.markdown(
         f"""
         <div class="page-header">
